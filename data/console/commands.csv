@@ -1,0 +1,2 @@
+command,class,tags,syntax,help
+MTICYG_showConditions,niko_MTICYG.console.ShowConditions,debug,MTICYG_showConditions,Returns the list of active crash conditions.

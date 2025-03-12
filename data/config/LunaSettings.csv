@@ -1,0 +1,3 @@
+fieldID,fieldName,fieldType,defaultValue,secondaryValue,fieldDescription,minValue,maxValue,tab
+MTICYG_baseBudget,Condition Budget,Double,100.0,,"The higher, the more conditions will be picked.",0,1000,General
+MTICYG_updateConditions,Update Conditions Over Time,Boolean,true,,"Every 30-40 minutes, conditions will be regenerated. You will not be notified when this happens.",,,General

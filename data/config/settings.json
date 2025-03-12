@@ -1,0 +1,6 @@
+ {
+ 
+	"plugins":{
+		"niko_MTICYG_combatScript":"niko_MTICYG.CombatScript",
+	},
+ }
