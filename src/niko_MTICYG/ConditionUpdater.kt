@@ -1,15 +1,17 @@
 package niko_MTICYG
 
 import com.fs.starfarer.api.EveryFrameScript
+import com.fs.starfarer.api.GameState
 import com.fs.starfarer.api.Global
 import com.fs.starfarer.api.util.IntervalUtil
 import niko_MTICYG.effects.CrashCondition
 
 class ConditionUpdater: EveryFrameScript {
+    var reported = false
 
     companion object {
         fun get(): ConditionUpdater? {
-            if (!Settings.updateConditions) return null
+            if (!Settings.updateConditions || !Settings.canAddConditionUpdaterYet) return null
             val sector = Global.getSector() ?: return null
 
             var script: ConditionUpdater? = sector.transientScripts.firstOrNull { it::class.java == ConditionUpdater::class.java } as? ConditionUpdater
@@ -33,6 +35,18 @@ class ConditionUpdater: EveryFrameScript {
         interval.advance(amount)
         if (interval.intervalElapsed()) {
             CrashCondition.getNewEffects(Settings.baseBudget)
+        }
+
+        if (Settings.reportConditionChanges) {
+            if (!reported && Global.getCurrentState() != GameState.TITLE) {
+                if (Global.getCombatEngine().combatUI != null) {
+                    Global.getCombatEngine().combatUI.addMessage(0, CrashCondition.getChangedString())
+                } else {
+                    Global.getSector().campaignUI.addMessage(CrashCondition.getChangedString())
+                }
+                reported = true
+                Global.getSoundPlayer().playUISound("cr_playership_critical", 1f, 1f)
+            }
         }
     }
 }

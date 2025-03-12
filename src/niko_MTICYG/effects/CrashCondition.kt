@@ -1,7 +1,9 @@
 package niko_MTICYG.effects
 
 import com.fs.starfarer.api.util.WeightedRandomPicker
+import niko_MTICYG.ConditionUpdater
 import niko_MTICYG.MTICYG_modPlugin
+import java.util.concurrent.locks.Condition
 
 enum class CrashCondition(
     val pickWeight: Float,
@@ -52,6 +54,8 @@ enum class CrashCondition(
 
             val effects = getEffects(budget)
             effects.forEach { addNewEffect(it) }
+
+            ConditionUpdater.get()?.reported = false
         }
 
         private fun addNewEffect(condition: CrashCondition) {
@@ -89,6 +93,10 @@ enum class CrashCondition(
 
         fun effectActive(id: CrashCondition): Boolean {
             return activeConditons.any { it == id }
+        }
+
+        fun getChangedString(): String {
+            return "NEW CONDITIONS! $activeConditons"
         }
     }
 }

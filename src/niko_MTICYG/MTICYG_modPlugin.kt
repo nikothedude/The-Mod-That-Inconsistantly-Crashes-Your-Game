@@ -49,6 +49,8 @@ class MTICYG_modPlugin: BaseModPlugin() {
 
         Global.getSector().addTransientListener(UltimateListener())
         Global.getSector().listenerManager.addListener(UltimateListener(), true)
+
+        Settings.canAddConditionUpdaterYet = true
         ConditionUpdater.get()
 
         if (Settings.lunaLibEnabled) {
