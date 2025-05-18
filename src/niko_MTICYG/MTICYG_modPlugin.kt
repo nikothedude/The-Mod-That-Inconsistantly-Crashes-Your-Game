@@ -47,14 +47,14 @@ class MTICYG_modPlugin: BaseModPlugin() {
             return
         }
 
-        Global.getSector().addTransientListener(UltimateListener())
-        Global.getSector().listenerManager.addListener(UltimateListener(), true)
+        val listener = UltimateListener()
+        Global.getSector().addTransientListener(listener)
+        Global.getSector().listenerManager.addListener(listener, true)
 
         Settings.canAddConditionUpdaterYet = true
         ConditionUpdater.get()
 
         if (Settings.lunaLibEnabled) {
-            LunaSettings.addSettingsListener(settingsChangedListener())
             LunaSettings.addSettingsListener(settingsChangedListener())
         }
     }

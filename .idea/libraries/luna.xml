@@ -1,22 +1,12 @@
 <component name="libraryTable">
   <library name="luna">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../LunaLib/jars/LunaLib-Kotlin.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../LunaLib/jars/LunaLib.jar!/" />
-      <root url="file://$PROJECT_DIR$/../LunaLib/jars" />
-      <root url="file://$PROJECT_DIR$/../LunaLib/jars/libs" />
+      <root url="jar://$PROJECT_DIR$/../LunaLib-2.0.3/jars/LunaLib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../LunaLib-2.0.3/jars/LunaLib-Kotlin.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="file://$PROJECT_DIR$/../LunaLib/src/LunaLib-Core" />
-      <root url="file://$PROJECT_DIR$/../LunaLib/src/LunaLib-Core" />
-      <root url="file://$PROJECT_DIR$/../LunaLib/src/LunaLib-Kotlin" />
-      <root url="file://$PROJECT_DIR$/../LunaLib" />
-      <root url="file://$PROJECT_DIR$/../LunaLib/src/LunaLib-Core" />
-      <root url="file://$PROJECT_DIR$/../LunaLib/src" />
-      <root url="file://$PROJECT_DIR$/../LunaLib/src/LunaLib-Core" />
+      <root url="file://$PROJECT_DIR$/../LunaLib-2.0.3/src/LunaLib-Core" />
     </SOURCES>
-    <jarDirectory url="file://$PROJECT_DIR$/../LunaLib/jars" recursive="false" />
-    <jarDirectory url="file://$PROJECT_DIR$/../LunaLib/jars/libs" recursive="false" />
   </library>
 </component>
